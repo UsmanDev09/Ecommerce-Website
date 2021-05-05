@@ -1,0 +1,49 @@
+.formGroup {
+    position: relative;
+    height: 3em;
+    margin: 15px 0;
+  }
+  div > div:nth-child(2) > form > div > div:nth-child(7){
+    margin-bottom: 0;
+    height:2.3em;
+  }
+
+.formControl {
+    height: 2em;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    transition: translateX 6s ease-in;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 5px;
+    padding-left: 20px;
+    
+
+  }
+
+
+
+.formControlLabel {
+    position: absolute;
+    font-size: .8em;
+    top: 0;
+    left: 5px;
+   
+    text-transform: uppercase;
+  }
+
+
+.formControl::placeholder {
+    color: rgba(0, 0, 0, 0.8);
+    transition: ease-in 0.3s;
+    position: relative;
+    left: 0px;
+    opacity: 1;
+    font-family: sans-serif;
+  }
+
+.formControl:focus::placeholder {
+    opacity:0;
+  }

@@ -1,0 +1,25 @@
+.hamburger{
+    margin:12.5px 0;
+    width:30px;
+    height:2px;
+    background-color: black;
+  
+}
+.hamburger::before{
+    content:"";
+    width:30px;
+    height:2px;
+    display: block;
+    background-color: black;
+    transform: translateY(10px);
+  
+}
+.hamburger::after{
+    content:"";
+    width:30px;
+    height:2px;
+    display: block;
+    background-color: black;
+    transform: translateY(20px);
+ 
+}

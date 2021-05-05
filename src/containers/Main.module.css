@@ -1,0 +1,11 @@
+.btn {
+    transition:background-color 0.5s;
+}
+.btn:hover{
+    background-color:black;
+   
+}
+
+.btn:hover  p{
+    color:white;
+}
