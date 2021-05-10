@@ -26,20 +26,24 @@ function Account(props) {
             {console.log(mouseHover)}
           
             {mouseHover && props.userEmail ? 
-            <div style = {{display: mouseHover,  boxShadow: "0.4px 0.2px 3px black" , padding:"20px",zIndex:"100",position:"absolute",top:"100%",right:"10%",color:"white",backgroundColor:"black",width:"210px"}}>
+            <div style = {{display: mouseHover,  boxShadow: "0.4px 0.2px 3px black" , padding:"20px",zIndex:"100",position:"absolute",top:"100%",right:"10%",color:"white",backgroundColor:"white",width:"210px"}}>
             <div style = {{display:"flex",marginBottom:"10px"}}>
                 <img style = {{height:"50px",width:"50px"}} src = {avatar}></img>
                 <div style = {{display:"flex",flexDirection:"column"}}>
-                <p>{props.userEmail}</p>
-                <p style = {{color:"white",paddingLeft:"10px"}}>You are signed in</p>
+                <p style = {{color:"black",paddingLeft:"10px",fontFamily:"monospace"}}>{props.userEmail}</p>
+                <p style = {{color:"black",paddingLeft:"10px",fontFamily:"monospace"}}>You are signed in</p>
                 </div>
             </div>
-            <button onClick = {() => auth.signOut()}style = {{width:"60%",backgroundColor:"white",color:"black", border:"none",height:"1.8em",cursor:"pointer"}} >Sign Out</button>
+            <button onClick = {() => {
+                setMouseHover(!mouseHover)
+                auth.signOut()}}style = {{width:"60%",backgroundColor:"black",color:"white", border:"none",height:"1.8em",cursor:"pointer",fontFamily:"monospace"}} >Sign Out</button>
         </div>: null}
         {mouseHover === true && props.userEmail === null ? 
-            <div style = {{  boxShadow: "0.4px 0.2px 3px black" , padding:"20px",zIndex:"100",position:"absolute",top:"100%",right:"10%",color:"white",backgroundColor:"black",width:"210px",height:"4em"}}>
+            <div style = {{ display: mouseHover, boxShadow: "0.4px 0.2px 3px black" , padding:"20px",zIndex:"100",position:"absolute",top:"100%",right:"10%",color:"black",backgroundColor:"white",width:"210px",height:"4em"}}>
                 <img style = {{height:"50px",width:"50px",paddingRight:"10px"}} src = {avatar}></img>
-                <button  onClick = {() => history.push('/Account')} style ={{position:"absolute",top:"40%",width:"60%",backgroundColor:"white",color:"black", border:"none",outline:"none",fontFamily:"monospace",height:"1.8em",cursor:"pointer",borderRadius:"0.3vw"}}>Sign In</button>
+                <button  onClick = {() => {
+                    setMouseHover(!mouseHover)
+                    history.push('/Account')}} style ={{position:"absolute",top:"40%",width:"60%",backgroundColor:"black",color:"white", border:"none",outline:"none",fontFamily:"monospace",height:"1.8em",cursor:"pointer",borderRadius:"0.3vw"}}>Sign In</button>
             </div>:null
         }
         </div>

@@ -24,7 +24,7 @@ function UserAccount() {
            userAuth.user.updateProfile({
                displayName : userNameRef.current.value 
            })
-            history.push("/Checkout")
+            history.push("/")
         }).catch((error) => setError(error.message))
 
     }
