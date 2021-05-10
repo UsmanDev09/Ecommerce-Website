@@ -5,9 +5,12 @@ import {BrowserRouter as Router,Link,Route, StaticRouter} from 'react-router-dom
 import {connect} from 'react-redux';
 import styles from './Cart.module.css'
 import store from '../redux/store'
+import UserAccount from './UserAccount'
 const CartDetails = (props) => {
+    const user = props.userEmail
     let imageMutate,quantityMutate,priceMutate,productId;
     const onCloseCart = () => {
+        
         store.dispatch({
             type:"ClickCart",
             toggleCart: !store.getState().toggleCart
@@ -57,7 +60,7 @@ const CartDetails = (props) => {
     const styledCheckoutButton = {
         listStyleType : "none",
         textDecoration: "none",
-        color:"black",
+        paddingTop:"12px",
         margin:"1rem 0rem",
         lineSpacing: "0.05em",
         fontWeight:"100",
@@ -66,7 +69,9 @@ const CartDetails = (props) => {
         backgroundColor:"black",
         color:"white",
         width:"100%",
-        height:"2em"
+        height:"2em",
+        fontFamily: "monospace",
+        cursor:"pointer"
     }
     if(props.product_name.length === 0 ){
 
@@ -116,10 +121,10 @@ const CartDetails = (props) => {
                
             </div>
             <div style = {{display:"flex", justifyContent:"flex-end"}}>
-            <button onClick = {() => onIncreaseQuantity(element,productId)} style = {{backgroundColor:"black",color:"white",margin: " 1px 5px", border:"none", width:"20px"}}>+</button>
-            <button onClick = { () => onDecreaseQuantity(element,productId)}style = {{backgroundColor:"black",color:"white", border:"none",margin: " 1px 5px",  width:"20px"}}> -</button>    
+            <button onClick = {() => onIncreaseQuantity(element,productId)} style = {{backgroundColor:"black",color:"white",margin: " 1px 5px", border:"none", width:"20px",cursor:"pointer"}}>+</button>
+            <button onClick = { () => onDecreaseQuantity(element,productId)}style = {{backgroundColor:"black",color:"white", border:"none",margin: " 1px 5px",  width:"20px",cursor:"pointer"}}> -</button>    
             </div>
-            <button onClick = {() => onRemoveProduct(element,productId)} style = {{width:"100%", border:"none",backgroundColor:"black", color:"white",height:"1.75em", fontFamily:"monospace"}}>Remove Product</button>
+            <button onClick = {() => onRemoveProduct(element,productId)} style = {{width:"100%", border:"none",backgroundColor:"black", color:"white",height:"1.75em", fontFamily:"monospace",cursor:"pointer"}}>Remove Product</button>
             <hr style = {{width: "70%",height:"1px", backgroundColor:"black",opacity:"0.5"}}></hr>
             </div>
             
@@ -130,9 +135,10 @@ const CartDetails = (props) => {
         <div style={{display:"flex",flexDirection:"column"}}>
             
             {/* <Link to="/Cart" style = {styledCartButton} ><p style = {{margin:"3px",textAlignLast:"center"}}>View Shoping Bag</p></Link> */}
-           <Link to="/Checkout" style = {styledCheckoutButton} onClick = {onCloseCart}><p style = {{margin:"3px",textAlignLast:"center"}}>Proceed To Checkout</p></Link>
-            
-            
+            { !user?  <Link to = "/Account" style = {styledCheckoutButton} onClick = {onCloseCart}> Proceed to Checkout</Link> : 
+                <Link to="/Checkout" style = {styledCheckoutButton} onClick = {onCloseCart}><p style = {{margin:"3px",textAlignLast:"center"}}>Proceed To Checkout</p></Link>
+            }
+              
         </div>
         </div>
     )
@@ -178,7 +184,7 @@ const Cart = (props) => {
             <p style = {{fontSize:"15px",color:"black"}}>({props.quantity})</p>
         </div>
         <div style = {{position:"absolute",top:"0",right:"0",height:"100vh",backgroundColor:"white", visibility:props.toggleCart ? "visible":"hidden", opacity: props.toggleCart? "1":"0", transition: "visibility 0s, opacity 0.5s linear"}}>
-            <CartDetails product_name = { props.productName} productPrice = {props.productPrice} productImage = {props.productImage} productQuantity  = {props.productQuantity} totalQuantity = {props.quantity}  productId = {props.productId}toggleCart ={props.toggleCart}></CartDetails>
+            <CartDetails userEmail = {props.userEmail} product_name = { props.productName} productPrice = {props.productPrice} productImage = {props.productImage} productQuantity  = {props.productQuantity} totalQuantity = {props.quantity}  productId = {props.productId}toggleCart ={props.toggleCart}></CartDetails>
         </div>
         </Fragment>
     )
@@ -194,8 +200,8 @@ const mapStateToProps = (state) => {
             productQuantity : state.productQuantity,
             toggleCart : state.toggleCart,
             productPrice : state.productPrice,
-            productId: state.productId
-   
+            productId: state.productId,
+            userEmail : state.userEmail
        
     }
 }

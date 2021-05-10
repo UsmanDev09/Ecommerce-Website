@@ -1,5 +1,5 @@
 {
-  "homepage" : "http://UsmanSiddique09.github.io/Ecommerce-Website",
+  "homepage": "http://UsmanSiddique09.github.io/Ecommerce-Website",
   "name": "ecommerce",
   "version": "0.1.0",
   "private": true,
@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "firebase": "^8.5.0",
     "react": "^17.0.2",
     "react-country-region-selector": "^3.0.2",
     "react-dom": "^17.0.2",
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy" : "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

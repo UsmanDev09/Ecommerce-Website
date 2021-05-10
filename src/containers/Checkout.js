@@ -234,11 +234,13 @@ return (
             <input name="firstName" placeholder="First Name" required className  = {styles.formControl} value = {props.customerFirstName} type = "text" onChange = { enterFirstName} onBlur = {verifyFirstName}></input>
             <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.firstNameError}</p>
         </div> 
-        <div className = {styles.formGroup}>    
+
+        <div className = {styles.formGroup}>
            
-            <input className = {styles.formControl} placeholder="Last Name" required value = {props.customerLastName} type = "text" onChange = { enterLastName} onBlur = {verifyLastName}type = "text"></input>
-            <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.lastNameError}</p>
-        </div>   
+            <input name="lastName" placeholder="Last Name" required className  = {styles.formControl} value = {props.customerLastName} type = "text" onChange = { enterLastName} onBlur = {verifyLastName}></input>
+            <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.firstNameError}</p>
+        </div> 
+        
         <div className = {styles.formGroup}>    
             
             <input className = {styles.formControl} placeholder="Email Address" required value = {props.customerEmail} type = "text" onChange = { enterEmail} onBlur = {verifyEmail}type = "text"></input>
@@ -339,9 +341,9 @@ const mapStateToProps = (state) => {
     return{
         selectedCountry : state.selectedCountry,
         selectedRegion : state.selectedRegion,
-        customerFirstName : state.customerFirstName,
+        customerFirstName : state.customerFirstName  ,
         customerLastName : state.customerLastName,
-        customerEmail: state.customerEmail,
+        customerEmail:  state.customerEmail,
         EmailError : state.EmailError,
         phoneNumber : state.phoneNumber,
         phoneErrorMessage: state.phoneErrorMessage,
@@ -356,7 +358,7 @@ const mapStateToProps = (state) => {
         formSubmissionError: state.formSubmissionError,
         verified : state.verified,
         addressError : state.addressError,
-       
+        
         countryError : state.countryError
     }
 }

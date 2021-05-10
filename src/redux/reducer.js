@@ -350,6 +350,30 @@ const reducer = (state , action) => {
                 }
             
         )
+
+        case "login" :
+            localStorage.setItem('userEmail', action.userEmail);
+            localStorage.setItem('userName', action.userName)
+            return(
+                {
+                    ...state,
+                    userEmail : localStorage.getItem('userEmail'),
+                    userName : localStorage.getItem('userName')
+                    
+            }
+            )
+        
+
+            case "logout" :
+                localStorage.setItem('userEmail', "")
+                localStorage.setItem('userName',"")
+                return(
+                    {
+                        ...state,
+                        userName : null,
+                        userEmail : null
+                    }
+                )
     default:
 
         return state;

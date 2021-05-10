@@ -1,0 +1,67 @@
+.userAccount{
+    height: 100vh;
+    width: 100%;
+   
+}
+.userAccount_body{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top:30%;
+    padding:40px;
+    max-width: 300px;
+    
+    margin: 0 auto;
+    box-shadow: 1px 1px 5px rgb(177, 174, 174);
+}
+.userAccount_body > input {
+    border:0.5px solid black;
+    border-radius: 0.4vw;
+    height:30px;
+    margin-top:10px;
+    padding-left: 16px;
+    outline: none;
+    font-family: monospace;
+  
+}
+
+.userAccount_signInBtn{
+    width:30%;
+    margin-top:  32px;
+    background: black;
+    border: none;
+    border-radius: 0.3vw;
+    font-family: monospace;
+    color:white;
+    height: 30px;
+    cursor: pointer;
+}
+
+.userAccount_body > h4{
+    margin-top:5px;
+    font-weight:400;
+    font-family:monospace;
+    margin-bottom: 0;
+}
+
+.userAccount_signUp:hover{
+text-decoration: underline;
+cursor: pointer;
+}
+
+.userAccount_error{
+    font-size: 0.9rem;
+    color:red;
+    font-family: monospace;
+}
+.userAccount_guestBtn{
+    width: 100%;
+    cursor: pointer;
+    background: black;
+    color:white;
+    border:none;
+    border-radius: 0.3vw;
+    height:30px;
+    font-family: monospace;
+
+}
