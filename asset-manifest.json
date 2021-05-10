@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/Ecommerce-Website/static/css/main.cb5d4e63.chunk.css",
-    "main.js": "/Ecommerce-Website/static/js/main.45dd3750.chunk.js",
-    "main.js.map": "/Ecommerce-Website/static/js/main.45dd3750.chunk.js.map",
-    "runtime-main.js": "/Ecommerce-Website/static/js/runtime-main.1d40b7e3.js",
-    "runtime-main.js.map": "/Ecommerce-Website/static/js/runtime-main.1d40b7e3.js.map",
-    "static/js/2.79dbdd1b.chunk.js": "/Ecommerce-Website/static/js/2.79dbdd1b.chunk.js",
-    "static/js/2.79dbdd1b.chunk.js.map": "/Ecommerce-Website/static/js/2.79dbdd1b.chunk.js.map",
-    "static/js/3.eb8029c1.chunk.js": "/Ecommerce-Website/static/js/3.eb8029c1.chunk.js",
-    "static/js/3.eb8029c1.chunk.js.map": "/Ecommerce-Website/static/js/3.eb8029c1.chunk.js.map",
+    "main.css": "/Ecommerce-Website/static/css/main.faa5253c.chunk.css",
+    "main.js": "/Ecommerce-Website/static/js/main.d143ec91.chunk.js",
+    "main.js.map": "/Ecommerce-Website/static/js/main.d143ec91.chunk.js.map",
+    "runtime-main.js": "/Ecommerce-Website/static/js/runtime-main.d05d98e3.js",
+    "runtime-main.js.map": "/Ecommerce-Website/static/js/runtime-main.d05d98e3.js.map",
+    "static/js/2.538352b7.chunk.js": "/Ecommerce-Website/static/js/2.538352b7.chunk.js",
+    "static/js/2.538352b7.chunk.js.map": "/Ecommerce-Website/static/js/2.538352b7.chunk.js.map",
+    "static/js/3.e3306cd1.chunk.js": "/Ecommerce-Website/static/js/3.e3306cd1.chunk.js",
+    "static/js/3.e3306cd1.chunk.js.map": "/Ecommerce-Website/static/js/3.e3306cd1.chunk.js.map",
     "index.html": "/Ecommerce-Website/index.html",
-    "static/css/main.cb5d4e63.chunk.css.map": "/Ecommerce-Website/static/css/main.cb5d4e63.chunk.css.map",
-    "static/js/2.79dbdd1b.chunk.js.LICENSE.txt": "/Ecommerce-Website/static/js/2.79dbdd1b.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/Ecommerce-Website/static/media/logo.6ce24c58.svg"
+    "static/css/main.faa5253c.chunk.css.map": "/Ecommerce-Website/static/css/main.faa5253c.chunk.css.map",
+    "static/js/2.538352b7.chunk.js.LICENSE.txt": "/Ecommerce-Website/static/js/2.538352b7.chunk.js.LICENSE.txt",
+    "static/media/account.7c160289.svg": "/Ecommerce-Website/static/media/account.7c160289.svg",
+    "static/media/avatar.a1cfaeaf.svg": "/Ecommerce-Website/static/media/avatar.a1cfaeaf.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1d40b7e3.js",
-    "static/js/2.79dbdd1b.chunk.js",
-    "static/css/main.cb5d4e63.chunk.css",
-    "static/js/main.45dd3750.chunk.js"
+    "static/js/runtime-main.d05d98e3.js",
+    "static/js/2.538352b7.chunk.js",
+    "static/css/main.faa5253c.chunk.css",
+    "static/js/main.d143ec91.chunk.js"
   ]
 }
