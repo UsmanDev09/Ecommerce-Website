@@ -231,25 +231,25 @@ return (
         <div style = {{width:"80%"}}>
         <div className = {styles.formGroup}>
            
-            <input name="firstName" placeholder="First Name" required className  = {styles.formControl} value = {props.customerFirstName} type = "text" onChange = { enterFirstName} onBlur = {verifyFirstName}></input>
+            <input name="firstName" autoComplete = "off" placeholder="First Name" required className  = {styles.formControl} value = {props.customerFirstName} type = "text" onChange = { enterFirstName} onBlur = {verifyFirstName}></input>
             <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.firstNameError}</p>
         </div> 
 
         <div className = {styles.formGroup}>
            
-            <input name="lastName" placeholder="Last Name" required className  = {styles.formControl} value = {props.customerLastName} type = "text" onChange = { enterLastName} onBlur = {verifyLastName}></input>
+            <input name="lastName" autoComplete = "off" placeholder="Last Name" required className  = {styles.formControl} value = {props.customerLastName} type = "text" onChange = { enterLastName} onBlur = {verifyLastName}></input>
             <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.firstNameError}</p>
         </div> 
         
         <div className = {styles.formGroup}>    
             
-            <input className = {styles.formControl} placeholder="Email Address" required value = {props.customerEmail} type = "text" onChange = { enterEmail} onBlur = {verifyEmail} type = "text"></input>
+            <input className = {styles.formControl}autoComplete = "off" placeholder="Email Address" required value = {props.customerEmail} type = "text" onChange = { enterEmail} onBlur = {verifyEmail} type = "text"></input>
             <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.EmailError}</p>
             </div>
         
         <div className = {styles.formGroup}>
           
-            <input className = {styles.formControl} placeholder="Address" required value = {props.customerAddress} type = "text" onChange = { enterAddress} onBlur = {verifyAddress} type = "text"></input>
+            <input className = {styles.formControl} autoComplete = "off" placeholder="Address" required value = {props.customerAddress} type = "text" onChange = { enterAddress} onBlur = {verifyAddress} type = "text"></input>
             <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.addressError}</p>
         </div>
             
@@ -278,7 +278,7 @@ return (
 
         <div style = {{margin: "15px 0"}} className = {styles.formGroup}>   
             
-            <input className = {styles.formControl} placeholder = "Mobile Number" required value = {props.phoneNumber} type = "text" onChange = { enterPhoneNumber} onBlur = {verifyPhoneNumber} type = "text"></input>  
+            <input className = {styles.formControl} autoComplete = "off" placeholder = "Mobile Number" required value = {props.phoneNumber} type = "text" onChange = { enterPhoneNumber} onBlur = {verifyPhoneNumber} type = "text"></input>  
             <p style = {{ position:"relative", top:"90%", color:"red"}}>{props.phoneErrorMessage}</p>
         </div>
            

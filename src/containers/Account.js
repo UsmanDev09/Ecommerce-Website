@@ -36,7 +36,9 @@ function Account(props) {
             </div>
             <button onClick = {() => {
                 setMouseHover(!mouseHover)
-                auth.signOut()}}style = {{width:"60%",backgroundColor:"black",color:"white", border:"none",height:"1.8em",cursor:"pointer",fontFamily:"monospace"}} >Sign Out</button>
+                auth.signOut()
+                history.push('/')
+            }}style = {{width:"60%",backgroundColor:"black",color:"white", border:"none",height:"1.8em",cursor:"pointer",fontFamily:"monospace"}} >Sign Out</button>
         </div>: null}
         {mouseHover === true && props.userEmail === null ? 
             <div style = {{ display: mouseHover, boxShadow: "0.4px 0.2px 3px black" , padding:"20px",zIndex:"100",position:"absolute",top:"100%",right:"10%",color:"black",backgroundColor:"white",width:"210px",height:"4em"}}>

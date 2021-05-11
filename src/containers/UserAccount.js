@@ -21,12 +21,14 @@ function UserAccount() {
             passwordRef.current.value
 
         ).then((userAuth) => {
-           userAuth.user.updateProfile({
+          /*  userAuth.user.updateProfile({
                displayName : userNameRef.current.value 
-           })
+           }) */
             history.push("/")
-        }).catch((error) => setError(error.message))
-
+        }).catch((error) => {
+            console.log("error",error.message)
+            setError(error.message)
+        })
     }
     
     const signInWithGoogle = () => {
