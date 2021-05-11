@@ -35,12 +35,10 @@ function UserAccount() {
        
             auth.signInWithPopup(googleProvider)
             .then((userAuth) => {
-                userAuth.user.updateProfile({
-                    displayName : userNameRef.current.value 
-                })
+                // userAuth.user.updateProfile({
+                //     displayName : userNameRef.current.value 
+                // })
                 history.push("/")
-            }).catch((error) => {
-              
             }).catch((error) => setError(error.message))
           
     }
