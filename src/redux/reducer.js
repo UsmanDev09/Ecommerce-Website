@@ -29,8 +29,6 @@ const reducer = (state , action) => {
             localStorage.setItem('productAvailable', ["top_one","bottom_two","bottom_three","top_four","top_five","bottom_four","top_seven","top_eight", "top_nine","top_ten","top_eleven","top_twelve","top_thirteen"] )
             localStorage.setItem('productQuantityRemaining', ["2","3","4","5","1","7","2","3","4","5","1","7","1"] )
             
-        }else{
-
         }
         if(localStorage.getItem('productName') ){
             let i =0;
@@ -102,7 +100,7 @@ const reducer = (state , action) => {
                     productQuantity:  localStorage.getItem('productQuantity').split(',')[0] === ""? [] : localStorage.getItem('productQuantity').split(','),
                     productImage: localStorage.getItem('productImage').split(',')[0] === ""? [] : localStorage.getItem('productImage').split(','),
                     productPrice:  localStorage.getItem('productPrice').split(',')[0] === ""? [] : localStorage.getItem('productPrice').split(',') , 
-                    quantity: localStorage.getItem('quantity').split(',')[0] === ""? [] : localStorage.getItem('quantity').split(','),
+                    quantity: localStorage.getItem('quantity'),
                     subTotal : localStorage.getItem('subTotal') ,
                     productQuantityRemaining :  localStorage.getItem('productQuantityRemaining').split(',')
                 }
@@ -129,7 +127,7 @@ const reducer = (state , action) => {
                 productQuantity : localStorage.getItem('productQuantity').split(','),
                 productQuantityRemaining : localStorage.getItem('productQuantityRemaining').split(','),
                 subTotal: localStorage.getItem('subTotal'),
-                quantity: localStorage.getItem('quantity').split(',')
+                quantity: localStorage.getItem('quantity')
             }
             )      
 
@@ -152,7 +150,7 @@ const reducer = (state , action) => {
                     productQuantity : localStorage.getItem('productQuantity').split(','),
                     productQuantityRemaining : localStorage.getItem('productQuantityRemaining').split(','),
                     subTotal: localStorage.getItem('subTotal'),
-                    quantity: localStorage.getItem('quantity').split(',')
+                    quantity: localStorage.getItem('quantity')
                 }
                 )      
     case "CountrySelected":

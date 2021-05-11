@@ -157,7 +157,7 @@ const Checkout = (props) => {
     }
 
     const enterEmail = (e) => {
-       
+       console.log("e",e.target.value === null)
         store.dispatch({
             type: "CustomerEmail",
             customerEmail : e.target.value
@@ -243,7 +243,7 @@ return (
         
         <div className = {styles.formGroup}>    
             
-            <input className = {styles.formControl} placeholder="Email Address" required value = {props.customerEmail} type = "text" onChange = { enterEmail} onBlur = {verifyEmail}type = "text"></input>
+            <input className = {styles.formControl} placeholder="Email Address" required value = {props.customerEmail} type = "text" onChange = { enterEmail} onBlur = {verifyEmail} type = "text"></input>
             <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.EmailError}</p>
             </div>
         
@@ -307,7 +307,7 @@ return (
                    <img src ={process.env.PUBLIC_URL + imageRef} style ={{width:"70px",height:"70px",margin:"0 40px"}}></img>
 
                    <p style = {{fontFamily:"monospace",marginLeft:" 0px",fontWeight:"bold"}}>{element}</p>
-                    <p style = {{fontFamily:"monospace",marginLeft:" 60px"}}>{productQuantityRef} * 2</p>
+                    <p style = {{fontFamily:"monospace",marginLeft:" 60px"}}>{productQuantityRef}</p>
                     <p style = {{fontFamily:"monospace",marginLeft :" 60px"}}>{productPriceRef}</p>     
                 </div>)
                 })}
@@ -358,7 +358,7 @@ const mapStateToProps = (state) => {
         formSubmissionError: state.formSubmissionError,
         verified : state.verified,
         addressError : state.addressError,
-        
+        signUpEmail : state.userEmail,
         countryError : state.countryError
     }
 }

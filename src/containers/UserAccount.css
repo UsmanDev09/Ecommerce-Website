@@ -1,7 +1,7 @@
 .userAccount{
     height: 100vh;
     width: 100%;
-   
+  
 }
 .userAccount_body{
     display: flex;
@@ -12,6 +12,7 @@
     max-width: 300px;
     
     margin: 0 auto;
+  
     box-shadow: 1px 1px 5px rgb(177, 174, 174);
 }
 .userAccount_body > input {
@@ -27,7 +28,7 @@
 
 .userAccount_signInBtn{
     width:30%;
-    margin-top:  32px;
+    margin-top:  3px;
     background: black;
     border: none;
     border-radius: 0.3vw;
@@ -43,15 +44,25 @@
     font-family:monospace;
     margin-bottom: 0;
 }
-
+.userAccount_forgotPassword{
+    color:#9c4343;
+}
+.userAccount_forgotPassword:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+.userAccount_signUp{
+    color:#9c4343;
+}
 .userAccount_signUp:hover{
-text-decoration: underline;
-cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
+
 }
 
 .userAccount_error{
     font-size: 0.9rem;
-    color:red;
+    color:#9c4343;
     font-family: monospace;
 }
 .userAccount_guestBtn{
@@ -63,5 +74,28 @@ cursor: pointer;
     border-radius: 0.3vw;
     height:30px;
     font-family: monospace;
+    
+}
+.userAccount_googleSignIn{
+    width: 100%;
+    cursor: pointer;
+    background: black;
+    color:white;
+    border:none;
+    border-radius: 0.3vw;
+    height:30px;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 
+}
+.userAccount_googleSignIn > img {
+    position:relative;
+    right: 25px;
+}
+.userAccount_googleSignIn > p {
+    position:relative;
+    right: 15px;
 }
