@@ -26,12 +26,14 @@ function Account(props) {
             {console.log(mouseHover)}
           
             {mouseHover && props.userEmail ? 
-            <div style = {{display: mouseHover,  boxShadow: "0.4px 0.2px 3px black" , padding:"20px",zIndex:"100",position:"absolute",top:"100%",right:"10%",color:"white",backgroundColor:"white",width:"210px"}}>
+            <div style = {{display: mouseHover,  boxShadow: "0.4px 0.2px 3px black" , padding:"20px",zIndex:"100",position:"absolute",top:"100%",right:"10%",color:"white",backgroundColor:"white"}}>
             <div style = {{display:"flex",marginBottom:"10px"}}>
                 <img style = {{height:"50px",width:"50px"}} src = {avatar}></img>
                 <div style = {{display:"flex",flexDirection:"column"}}>
-                <p style = {{color:"black",paddingLeft:"10px",fontFamily:"monospace"}}>{props.userEmail}</p>
-                <p style = {{color:"black",paddingLeft:"10px",fontFamily:"monospace"}}>You are signed in</p>
+                <p style = {{color:"black",paddingLeft:"10px",fontFamily:"monospace",margin:"0"}}>{props.userName}</p>
+               
+                <p style = {{color:"black",paddingLeft:"10px",fontFamily:"monospace",marginBottom:"0"}}>{props.userEmail}</p>
+                <p style = {{color:"black",paddingLeft:"10px",fontFamily:"monospace",marginBottom:"0",color:"#9c4343"}}>You are signed in</p>
                 </div>
             </div>
             <button onClick = {() => {
@@ -59,8 +61,11 @@ function Account(props) {
 
 const mapStateToProps = (state) => {
     return {
-        userEmail : state.userEmail
+        userEmail : state.userEmail,
+        userName : state.userName
+      
     }
+
 }   
 
 export default connect(mapStateToProps)(Account)

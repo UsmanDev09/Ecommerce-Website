@@ -10,6 +10,7 @@ import OrderCompleted from './OrderCompleted';
 import Hamburger from './Hamburger';
 import Home from './Home';
 import UserAccount from './UserAccount'
+import SignUp from './SignUp'
 const Main = () => {
     return(
         
@@ -37,6 +38,7 @@ const Main = () => {
                 
                 <Route path = "/ShopNow" exact component = {ShopNow}></Route>
                 <Route path = "/Account" component = {UserAccount}></Route>
+                <Route path = "/SignUp" component = {SignUp}></Route>
                 <Route path = "/Cart" component = {ViewCart}></Route>
                 <Route path = "/Checkout" component = {Checkout}></Route>
                 

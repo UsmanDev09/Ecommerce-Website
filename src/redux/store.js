@@ -27,7 +27,8 @@ const store = createStore(reducer,
         lastNameError: localStorage.getItem('LastNameError'),
         EmailError: localStorage.getItem('EmailError'),
         userEmail : localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : null ,
-        userName :  localStorage.getItem('userName') ? localStorage.getItem('userName') : null 
+        userName :  localStorage.getItem('userName') ? localStorage.getItem('userName') : null ,
+        userMobileNumber : localStorage.getItem('userMobileNumber') ? localStorage.getItem('userMobileNumber') : null 
     },
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
