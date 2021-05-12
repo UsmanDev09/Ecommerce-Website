@@ -9,6 +9,14 @@ import UserAccount from './UserAccount'
 const CartDetails = (props) => {
     const user = props.userEmail
     let imageMutate,quantityMutate,priceMutate,productId;
+    const onProceedCart = () => {
+        store.dispatch({
+            type: "PreviousLocation",
+            previousLocation: "Proceed_To_Cart"
+        })
+        onCloseCart();
+    }
+    
     const onCloseCart = () => {
         
         store.dispatch({
@@ -135,8 +143,8 @@ const CartDetails = (props) => {
         <div style={{display:"flex",flexDirection:"column"}}>
             
             {/* <Link to="/Cart" style = {styledCartButton} ><p style = {{margin:"3px",textAlignLast:"center"}}>View Shoping Bag</p></Link> */}
-            { !user?  <Link to = "/Account" style = {styledCheckoutButton} onClick = {onCloseCart}> Proceed to Checkout</Link> : 
-                <Link to="/Checkout" style = {styledCheckoutButton} onClick = {onCloseCart}><p style = {{margin:"3px",textAlignLast:"center"}}>Proceed To Checkout</p></Link>
+            { !user?  <Link to = "/Account" style = {styledCheckoutButton} onClick = {onProceedCart}> Proceed to Checkout</Link> : 
+                <Link to="/Checkout" style = {styledCheckoutButton} onClick = {onProceedCart}><p style = {{margin:"3px",textAlignLast:"center"}}>Proceed To Checkout</p></Link>
             }
               
         </div>

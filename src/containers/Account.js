@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import "./Account.css"
 import auth from './firebase'
 import avatar from '../icons/avatar.svg'
+import store from '../redux/store'
 function Account(props) {
     const [display,setDisplay] = useState('none');
     const history = useHistory();
@@ -46,6 +47,10 @@ function Account(props) {
             <div style = {{ display: mouseHover, boxShadow: "0.4px 0.2px 3px black" , padding:"20px",zIndex:"100",position:"absolute",top:"100%",right:"10%",color:"black",backgroundColor:"white",width:"210px",height:"4em"}}>
                 <img style = {{height:"50px",width:"50px",paddingRight:"10px"}} src = {avatar}></img>
                 <button  onClick = {() => {
+                    store.dispatch({
+                        type: "PreviousLocation",
+                        previousLocation: "Account_Icon"
+                    })
                     setMouseHover(!mouseHover)
                     history.push('/Account')}} style ={{position:"absolute",top:"40%",width:"60%",backgroundColor:"black",color:"white", border:"none",outline:"none",fontFamily:"monospace",height:"1.8em",cursor:"pointer",borderRadius:"0.3vw"}}>Sign In</button>
             </div>:null

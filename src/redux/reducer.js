@@ -373,7 +373,15 @@ const reducer = (state , action) => {
                         userName : null,
                         userEmail : null
                     }
-                )
+            )
+            case "PreviousLocation" :
+                localStorage.setItem("previousLocation",action.previousLocation)
+                return(
+                    {
+                        ...state,
+                        previousLocation : localStorage.getItem("previousLocation")
+                    }
+            )
     default:
 
         return state;
