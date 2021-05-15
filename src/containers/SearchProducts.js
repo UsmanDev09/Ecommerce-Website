@@ -1,17 +1,17 @@
 import {Fragment, useEffect, useState} from 'react';
-import Categories from "./Categories";
+// import Categories from "./Categories";
 import ProductsDetails from '../ProductsDetails';
 import DisplayedProducts from './DisplayedProducts';
 const SearchProduct = () => {
     console.log('search products');
     const [isSelected,setIsSelected] = useState("default");
     const [filteredProducts, setfilteredProducts] = useState('');
-    const [checked,setVolumeChecked] = useState('false');
+    
     let temp = [...ProductsDetails];
     console.log(ProductsDetails[0])
     useEffect(() => 
     setfilteredProducts(temp.filter((products) => {
-        console.log(products);
+        
         return products.category === isSelected
         }))
     

@@ -17,11 +17,11 @@ const Main = () => {
         <Fragment>
         <Router>
         <div style = {{height:"100vh",position:"absolute",width:"100%",zIndex:"100"}} >
-            <div style = {{backgroundColor:"white",zIndex:"2",color:"white",width:"100%",position:"fixed",boxShadow:"-0.5px 0px 5px 1px grey"}}>
+            <div style = {{backgroundColor:"white",zIndex:"2",color:"white",width:"100%",position:"fixed",boxShadow:"#dad8d8 -0.5px 0px 1px 1px"}}>
                 
-                <div style = {{display:"flex",color:"white",flexDirection:"row",justifyContent:"space-between",margin: " 2% 5% 0 5%", width:"90%",height:"50px"}}>
+                <div style = {{display:"flex",color:"white",flexDirection:"row",justifyContent:"space-between",margin: " 0% 5% 0 5%", width:"90%",height:"50px"}}>
             
-                    <h2 style = {{margin:"auto 0",color:"black",fontFamily:"sans-serif"}}>ACTIVA</h2>
+                    <h2 style = {{margin:"auto 0",color:"black",fontFamily:"sans-serif",fontSize: "20px",fontFamily:"-webkit-pictograph"}}>ACTIVA</h2>
                     <Nav></Nav> 
                     
                     <Hamburger ></Hamburger>
@@ -31,10 +31,10 @@ const Main = () => {
                     </div>
 
                 </div>
-            
+               
             </div>
             <Switch>
-            <Route path = "/" exact component = {Home}></Route>
+            <Route path = "/Ecommerce-Website" exact component = {Home}></Route>
                 
                 <Route path = "/ShopNow" exact component = {ShopNow}></Route>
                 <Route path = "/Account" component = {UserAccount}></Route>

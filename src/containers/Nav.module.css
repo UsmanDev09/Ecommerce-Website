@@ -61,5 +61,7 @@
         transform: translateY(9px) rotate(-135deg);
 
     }
-    
+    .Nav_home{
+        font-size:16px;
+    }
 }

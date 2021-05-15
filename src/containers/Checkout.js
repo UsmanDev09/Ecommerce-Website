@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
+import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 import {connect} from 'react-redux'
 import store from '../redux/store';
 import {Link} from 'react-router-dom';
@@ -38,7 +38,7 @@ const Checkout = (props) => {
             store.dispatch({
                 type : "FormSubmission",
                 verified : "false",
-                formSubmissionError: "Please fill all the above fields",
+                formSubmissionError: "Please fill all the required fields",
                 countryError : "Please select a Country"
             })
         }
@@ -226,31 +226,32 @@ const Checkout = (props) => {
 
 return (
     <Fragment>
-        <div style = {{display:"flex",width :"100%",height:"100%",justifyContent:"flex-end",flexWrap:"wrap"}}>
-    <form style = {{display:"flex",flexDirection:"column",position:"absolute",top:"20%",left:window.innerWidth >900? "5%":"10%",width:window.innerWidth > 900? '45%': '80%'}}>
+    <div style = {{paddingBottom:"20px"}}>
+    <div style = {{display:"flex",width :"100%",height:"100%",justifyContent:"flex-end",flexWrap:"wrap"}}>
+    <form style = {{display:"flex",flexDirection:"column",position:"relative",top:"20%",margin:window.innerWidth >1000? "20% 0%":"20% 10%",width:window.innerWidth > 1000? '45%': '100%'}}>
         <div style = {{width:"80%"}}>
         <div className = {styles.formGroup}>
            
             <input name="firstName" autoComplete = "off" placeholder="First Name" required className  = {styles.formControl} value = {props.customerFirstName} type = "text" onChange = { enterFirstName} onBlur = {verifyFirstName}></input>
-            <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.firstNameError}</p>
+            <p style = {{ position:"relative", top:"80%", color:"red", fontSize:"14px"}}>{props.firstNameError}</p>
         </div> 
 
         <div className = {styles.formGroup}>
            
             <input name="lastName" autoComplete = "off" placeholder="Last Name" required className  = {styles.formControl} value = {props.customerLastName} type = "text" onChange = { enterLastName} onBlur = {verifyLastName}></input>
-            <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.firstNameError}</p>
+            <p style = {{ position:"relative", top:"80%", color:"red",fontSize:"14px"}}>{props.lastNameError}</p>
         </div> 
         
         <div className = {styles.formGroup}>    
             
             <input className = {styles.formControl}autoComplete = "off" placeholder="Email Address" required value = {props.customerEmail} type = "text" onChange = { enterEmail} onBlur = {verifyEmail} type = "text"></input>
-            <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.EmailError}</p>
+            <p style = {{ position:"relative", top:"80%", color:"red",fontSize:"14px"}}>{props.EmailError}</p>
             </div>
         
         <div className = {styles.formGroup}>
           
             <input className = {styles.formControl} autoComplete = "off" placeholder="Address" required value = {props.customerAddress} type = "text" onChange = { enterAddress} onBlur = {verifyAddress} type = "text"></input>
-            <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.addressError}</p>
+            <p style = {{ position:"relative", top:"80%", color:"red",fontSize:"14px"}}>{props.addressError}</p>
         </div>
             
             
@@ -258,17 +259,17 @@ return (
             width:"105%",            
             transition: "translateX 6s ease-in",
             marginBottom:"15px",
-            fontSize: "1rem",
+            fontSize: "14px",
             border: "1px solid rgb(209, 209, 209)",
             borderRadius: "5px",
             paddingLeft : "20px"}}></CountryDropdown>
-            <p style = {{ position:"relative", top:"80%", color:"red"}}>{props.countryError}</p>
+            <p style = {{ position:"relative", top:"80%", color:"red",fontSize:"14px"}}>{props.countryError}</p>
             <RegionDropdown
             style = {{height: "2em",
             width:"105%",            
             transition: "translateX 6s ease-in",
             margin:"15px 0",
-            fontSize: "1rem",
+            fontSize: "14px",
             border: "1px solid rgb(209, 209, 209)",
             borderRadius: "5px",
             paddingLeft : "20px"}}
@@ -279,7 +280,7 @@ return (
         <div style = {{margin: "15px 0"}} className = {styles.formGroup}>   
             
             <input className = {styles.formControl} autoComplete = "off" placeholder = "Mobile Number" required value = {props.phoneNumber} type = "text" onChange = { enterPhoneNumber} onBlur = {verifyPhoneNumber} type = "text"></input>  
-            <p style = {{ position:"relative", top:"90%", color:"red"}}>{props.phoneErrorMessage}</p>
+            <p style = {{ position:"relative", top:"90%", color:"red",fontSize:"14px"}}>{props.phoneErrorMessage}</p>
         </div>
            
             
@@ -289,12 +290,11 @@ return (
             <label style = {{margin:"0 10px"}}>Cash on Delivery</label>
         </div>     
 
-        <Link onClick = {onOrderComplete} to = {props.verified === "true" ? "/OrderCompleted" : "/Checkout"} style = {{position:"relative",top:"10px",color:"white",backgroundColor:"black",width:window.innerWidth > 500 ? "50%" : "60%",height:"2em",display:"flex",justifyContent:"space-around",alignItems:"flex-start",textDecoration:"none",fontFamily:"monospace",fontSize:"1.2rem",margin:"40px auto", marginBottom:"20px"}}><p style ={{margin:"auto 0"}}>Place Order</p></Link>   
-        <p style = {{ margin:"0",textAlign : "center", color:"red"}}>{props.formSubmissionError}</p>
+        
         </div>
     </form>
-    {window.innerWidth > 900? 
-    <aside style ={{backgroundColor: "#e1e1e1",width:"50%",minHeight:"100vh",height:"auto",position:"absolute",top:"12%",paddingBottom:"80px"}}>
+   
+    <aside style ={{backgroundColor: "#e1e1e1",width:window.innerWidth > 1000? "50%": "100%",minHeight:"100vh",height:"auto",position:"relative",top:"8%",paddingBottom:window.innerWidth > 1000? "80px": "0"}}>
         <div style ={{}}>
 
             <div className = "order" style = {{ color:"black",margin:"5% 0"}}>
@@ -304,11 +304,11 @@ return (
                     let productPriceRef = props.productPrice[index]
                    return(
                 <div style ={{display:"flex", margin:"0 10%",height:"100px"}}>
-                   <img src ={process.env.PUBLIC_URL + imageRef} style ={{width:"70px",height:"70px",margin:"0 40px"}}></img>
+                   <img src ={process.env.PUBLIC_URL + imageRef} style ={{width:"70px",height:"70px",margin:"0 0px",marginRight:"40px"}}></img>
 
-                   <p style = {{fontFamily:"monospace",marginLeft:" 0px",fontWeight:"bold"}}>{element}</p>
-                    <p style = {{fontFamily:"monospace",marginLeft:" 60px"}}>{productQuantityRef}</p>
-                    <p style = {{fontFamily:"monospace",marginLeft :" 60px"}}>{productPriceRef}</p>     
+                   <p style = {{fontFamily:"monospace",marginLeft:" 0px",fontWeight:"bold",fontSize:"14px"}}>{element}</p>
+                    <p style = {{fontFamily:"monospace",marginLeft:" 60px",fontSize:"14px"}}>{productQuantityRef}</p>
+                    <p style = {{fontFamily:"monospace",marginLeft :" 60px",fontSize:"14px"}}>{productPriceRef}</p>     
                 </div>)
                 })}
                 
@@ -331,7 +331,10 @@ return (
                 </div>
 
         </div>
-    </aside>: null}
+    </aside>
+    </div>
+    <Link onClick = {onOrderComplete} to = {props.verified === "true" ? "/OrderCompleted" : "/Checkout"} style = {{position:"relative",top:"10px",color:"white",backgroundColor:"black",width:window.innerWidth > 500 ? "50%" : "60%",height:"2em",display:"flex",justifyContent:"space-around",alignItems:"flex-start",textDecoration:"none",fontFamily:"monospace",fontSize:"1.2rem",margin:"40px auto", marginBottom:"40px"}}><p style ={{margin:"auto 0"}}>Place Order</p></Link>   
+        <p style = {{ margin:"0",textAlign : "center", color:"red"}}>{props.formSubmissionError}</p>
     </div>
     </Fragment>
 )

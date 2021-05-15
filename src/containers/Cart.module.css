@@ -1,7 +1,7 @@
 .closeBtn{
     position: absolute;
-    top:4%;
-    right:6%;
+    top:21px;
+    right:20px;
     width:15px;
     height: 20px;
     background-color: white;
@@ -16,7 +16,7 @@
     height: 2px;
     background-color: black;
     position: absolute;
-    right:5%;
+    right:8%;
     transform:translateY(9px) translateX(4px) rotate(135deg);
 }
 
@@ -24,7 +24,7 @@
     content:'';
     position:absolute;
 
-    right:5%;
+    right:8%;
     transform: translateY(9px)  translateX(4px) rotate(-135deg);
     width:20px;
     height: 2px;
@@ -33,7 +33,7 @@
 
 .cartStyle{
     width:40px;
-    height:50px;
+    height:45px;
     cursor:pointer;
     display:flex;
     flex-direction:row;
@@ -45,25 +45,14 @@
 
     .cartStyle{
         position:relative;
-        right:5%;
+        right:50px;
        
      
     }
 
 }
 
-@media only screen and (max-width: 900px) { 
-    .cartStyle{
-        right:7%;
-    }
-}
 
-@media only screen and (max-width:700px) { 
-
-    .cartStyle{
-        right:10%;
-    }
-}
 
 @media only screen and (max-width:700px) { 
 

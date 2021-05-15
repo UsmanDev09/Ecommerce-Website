@@ -27,7 +27,7 @@ function SignUp() {
                     userName : userNameRef.current.value,
                     userMobileNumber : mobileNumberRef.current.value
                 })
-                history.push("/")
+                history.push("/Ecommerce-Website")
         }).catch((error) => setError(error.message))
     }
     
@@ -53,14 +53,7 @@ function SignUp() {
                 <button  onClick = {register} className = "signUp_signUpBtn">Sign Up</button>
                 
                 <h4><span className = "signUp_haveAccount">Already have an account? </span><span className = "signUp_signInBtn" onClick ={() => history.push("/Account")}>Sign In here</span></h4>
-                
-                
-                
-                   
-              
-              
-                
-               
+   
             </div>
         </div>
     )

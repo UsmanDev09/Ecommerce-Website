@@ -30,14 +30,14 @@ const Nav  = (props) => {
         
         
         <ul style = {{width: props.toggle? '40%' : '' }} className = {styles.nav_wrapper}>
-            <Link to = "/" style = {styledList}>
-                <li style = {{fontSize:"1.3em",fontWeight:"400"}}>Home</li>
+            <Link to = "/Ecommerce-Website" style = {styledList}>
+                <li className = "Nav_home" style = {{fontSize:window.innerWidth > 1000? "14px": "16px",fontWeight:"500",padding:"8px"}}>Home</li>
             </Link>
             {/* <Link to = "/About" style = {styledList}>
                 <li style = {{fontSize:"1.3em"}}>About</li>
             </Link> */}
             <Link to = "/ShopNow" style = {styledList}>
-                <li style = {{fontSize:"1.3em",fontWeight:"400"}}>ShopNow</li>
+                <li className = "Nav_home" style = {{fontSize:window.innerWidth > 1000? "14px": "16px",fontWeight:"500",padding:"8px"}}>ShopNow</li>
             </Link>
             {/* <Link to = "/ContactUs" style = {styledList}>
                 <li style = {{fontSize:"1.3em",width:"150%"}}>Contact Us</li>

@@ -10,7 +10,7 @@ const Hamburger = () => {
     }
     const hamBurgerStyle = window.innerWidth > 1000? {
         cursor:"pointer",
-        height:"50px",
+        height:"30px",
         width:"30px",
         position:"absolute",
         right:"5%",
@@ -18,7 +18,7 @@ const Hamburger = () => {
         outline:"none"
     }:
     {cursor:"pointer",
-        height:"50px",
+        height:"30px",
         width:"30px",
         position:"absolute",
         right:"5%",

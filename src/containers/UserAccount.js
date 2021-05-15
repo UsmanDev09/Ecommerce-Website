@@ -29,7 +29,7 @@ function UserAccount(props) {
                 userMobileNumber : userAuth.user.phoneNumber
 
             })
-            history.push("/")
+            history.push("/Ecommerce-Website")
         }).catch((error) => {
             console.log("error",error.message)
             setError(error.message)
@@ -43,7 +43,7 @@ function UserAccount(props) {
                 // userAuth.user.updateProfile({
                 //     displayName : userNameRef.current.value 
                 // })
-                history.push("/")
+                history.push("/Ecommerce-Website")
             }).catch((error) => setError(error.message))
           
     }

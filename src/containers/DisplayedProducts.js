@@ -8,7 +8,7 @@ const DisplayedProducts = (props) => {
         return(
             products.map((elements) => {
                 return (
-                        <div style = {{display:"flex",flexDirection:"row",flexWrap:"wrap",position:"absolute",top:"23%",width:"100%",margin:"0 auto",color:"black",justifyContent:"center"}}>
+                        <div style = {{display:"flex",flexDirection:"row",flexWrap:"wrap",position:"absolute",top:"50px",width:"100%",margin:"0 auto",color:"black",justifyContent:"center"}}>
                             {elements.image.map((innerElements,index) => {
                                 console.log("elements",elements)
                                         let productName = elements.product_name[index];

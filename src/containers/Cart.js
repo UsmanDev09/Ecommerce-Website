@@ -1,11 +1,11 @@
 
-import { useState,Fragment, useEffect } from 'react';
+import { useState,Fragment} from 'react';
 import cartIcon from '../icons/shopping-cart.png';
-import {BrowserRouter as Router,Link,Route, StaticRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styles from './Cart.module.css'
 import store from '../redux/store'
-import UserAccount from './UserAccount'
+
 const CartDetails = (props) => {
     const user = props.userEmail
     let imageMutate,quantityMutate,priceMutate,productId;
@@ -116,7 +116,7 @@ const CartDetails = (props) => {
                
                
                 <div>
-                    <img src = {process.env.PUBLIC_URL +imageMutate} style = {{width:"100px",height:"100px"}}></img>
+                    <img src = {process.env.PUBLIC_URL +imageMutate} style = {{width:"100px",height:"100px"}} alt="product_image"></img>
                 </div>
                 <div style = {{textAlign:"right"}}>
                     <p style = {{fontFamily: "monospace"}}>{element}</p>
@@ -164,7 +164,7 @@ const Cart = (props) => {
    
     const cartStyle  = window.innerWidth > 1000?  {
         width:"40px",
-        height:"50px",
+        height:"40px",
         cursor:"pointer",
         display:"flex",
         flexDirection:"row",
@@ -175,7 +175,7 @@ const Cart = (props) => {
         position:"relative",
         right:"9%",
         width:"40px",
-        height:"50px",
+        height:"40px",
         cursor:"pointer",
         display:"flex",
         flexDirection:"row",
@@ -188,7 +188,7 @@ const Cart = (props) => {
         <Fragment>
           
         <div onClick ={onCartClick} className = {styles.cartStyle} >
-            <img src = {cartIcon} style = {{height:"40px",width:"40px",margin:"auto 0"}}alt = "cart" ></img>
+            <img src = {cartIcon} style = {{height:"30px",width:"40px",margin:"auto 0"}}alt = "cart" ></img>
             <p style = {{fontSize:"15px",color:"black"}}>({props.quantity})</p>
         </div>
         <div style = {{position:"absolute",top:"0",right:"0",height:"100vh",backgroundColor:"white", visibility:props.toggleCart ? "visible":"hidden", opacity: props.toggleCart? "1":"0", transition: "visibility 0s, opacity 0.5s linear"}}>
