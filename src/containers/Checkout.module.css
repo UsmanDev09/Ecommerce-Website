@@ -1,3 +1,21 @@
+.checkout{
+  padding-bottom:20px;
+}
+.checkout_formWrapper{
+  display:flex;
+  width :100%;
+  height:100%;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+}
+.checkout_form{
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  top:20%;
+  margin:10% 0%;
+  width: 45% ;
+}
 .formGroup {
     position: relative;
     height: 3em;
@@ -46,4 +64,30 @@
 
 .formControl:focus::placeholder {
     opacity:0;
+  }
+.checkout_aside{
+  background-color: #e1e1e1;
+  width: 50%;
+  min-height:100vh;
+  height:auto;
+  position:relative;
+  top:8%;
+  padding-bottom:80px;
+}
+.checkout_order{
+  color:black;
+  margin:20% 0 ;
+}
+  @media only screen and (max-width: 1000px) { 
+    .checkout_form{
+      margin:20% 10%;
+      width:100%;
+    }
+    .checkout_aside{
+      width: 100%;
+      padding-bottom: 0;
+    }
+    .checkout_order{
+      margin:5% 0%;
+    }
   }

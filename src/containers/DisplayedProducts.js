@@ -1,7 +1,7 @@
 import Products from './Products'; 
 
 const DisplayedProducts = (props) => {
-    console.log("product",props) 
+   
     let products = [...props.products]
    
     if(props.products.length > 0){
@@ -10,7 +10,7 @@ const DisplayedProducts = (props) => {
                 return (
                         <div style = {{display:"flex",flexDirection:"row",flexWrap:"wrap",position:"absolute",top:"50px",width:"100%",margin:"0 auto",color:"black",justifyContent:"center"}}>
                             {elements.image.map((innerElements,index) => {
-                                console.log("elements",elements)
+                             
                                         let productName = elements.product_name[index];
                                         let productPrice = elements.price[index];
                                         let productQuantityRemaining = elements.quantity[index];

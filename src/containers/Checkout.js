@@ -226,9 +226,9 @@ const Checkout = (props) => {
 
 return (
     <Fragment>
-    <div style = {{paddingBottom:"20px"}}>
-    <div style = {{display:"flex",width :"100%",height:"100%",justifyContent:"flex-end",flexWrap:"wrap"}}>
-    <form style = {{display:"flex",flexDirection:"column",position:"relative",top:"20%",margin:window.innerWidth >1000? "10% 0%":"20% 10%",width:window.innerWidth > 1000? '45%': '100%'}}>
+    <div className = {styles.checkout} >
+    <div className = {styles.checkout_formWrapper} >
+    <form className = {styles.checkout_form} >
         <div style = {{width:"80%"}}>
         <div className = {styles.formGroup}>
            
@@ -296,17 +296,17 @@ return (
         </div>
     </form>
    
-    <aside style ={{backgroundColor: "#e1e1e1",width:window.innerWidth > 1000? "50%": "100%",minHeight:"100vh",height:"auto",position:"relative",top:"8%",paddingBottom:window.innerWidth > 1000? "80px": "0"}}>
+    <aside className = {styles.checkout_aside}>
         <div style ={{}}>
 
-            <div className = "order" style = {{ color:"black",margin:window.innerWidth > 1000 ? "20% 0" : "5% 0%"}}>
+            <div className = {styles.checkout_order} >
                 {props.productName.map((element,index) => {
                     let imageRef = props.productImage[index]
                     let productQuantityRef = props.productQuantity[index]
                     let productPriceRef = props.productPrice[index]
                    return(
                 <div style ={{display:"flex", margin:"0 10%",height:"100px"}}>
-                   <img src ={process.env.PUBLIC_URL + imageRef} style ={{width:"70px",height:"70px",margin:"0 0px",marginRight:"40px"}}></img>
+                   <img src ={process.env.PUBLIC_URL + imageRef} style ={{width:"70px",height:"70px",margin:"0 0px",marginRight:"40px"}} alt ="product_image"></img>
 
                    <p style = {{fontFamily:"monospace",marginLeft:" 0px",fontWeight:"bold",fontSize:"14px"}}>{element}</p>
                     <p style = {{fontFamily:"monospace",marginLeft:" 60px",fontSize:"14px"}}>{productQuantityRef}</p>

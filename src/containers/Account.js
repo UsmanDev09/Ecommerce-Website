@@ -1,4 +1,4 @@
-import React,{useState,useEffect}from 'react'
+import React,{useState}from 'react'
 import {useHistory} from 'react-router-dom'
 import account from '../icons/account.svg'
 import {connect} from 'react-redux'
@@ -7,9 +7,9 @@ import auth from './firebase'
 import avatar from '../icons/avatar.svg'
 import store from '../redux/store'
 function Account(props) {
-    const [display,setDisplay] = useState('none');
+   
     const history = useHistory();
-    const image = document.querySelector(".account_Image")
+    
     const [mouseHover,setMouseHover] = useState(false)
   
     return (

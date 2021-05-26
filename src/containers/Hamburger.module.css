@@ -1,9 +1,18 @@
+.hamburger_Wrapper{
+    cursor:pointer;
+    height:30px;
+    width:30px;
+    position:absolute;
+    right:5%;
+    display:none;
+    outline:none;
+}
 .hamburger{
     margin:12.5px 0;
     width:30px;
     height:1px;
     background-color: black;
-  
+    display:none;
 }
 .hamburger::before{
     content:"";
@@ -22,4 +31,13 @@
     background-color: black;
     transform: translateY(16px);
  
+}
+
+@media only screen and (max-width: 1000px) { 
+    .hamburger{
+        display: block;
+    }   
+    .hamburger_Wrapper{
+        display: block;
+    }
 }

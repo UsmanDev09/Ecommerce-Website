@@ -1,9 +1,8 @@
 import { Fragment } from 'react'
 import Account from './Account'
 import Cart from './Cart';
-import {BrowserRouter as Router, Route,Switch,Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route,Switch} from 'react-router-dom'
 import ShopNow from './ShopNow';
-import ViewCart from './ViewCart';
 import Checkout from './Checkout';
 import Nav from './Nav';
 import OrderCompleted from './OrderCompleted';
@@ -11,7 +10,14 @@ import Hamburger from './Hamburger';
 import Home from './Home';
 import UserAccount from './UserAccount'
 import SignUp from './SignUp'
-const Main = () => {
+import {useHistory} from 'react-router-dom'
+import {database} from './firebase'
+import store from '../redux/store'
+const Main = (props) => {
+    const history = useHistory()
+    let initialState;
+   
+    
     return(
         
         <Fragment>
@@ -21,7 +27,7 @@ const Main = () => {
                 
                 <div style = {{display:"flex",color:"white",flexDirection:"row",justifyContent:"space-between",margin: " 0% 5% 0 5%", width:"90%",height:"50px"}}>
             
-                    <h2 style = {{margin:"auto 0",color:"black",fontFamily:"sans-serif",fontSize: "20px",fontFamily:"-webkit-pictograph"}}>ACTIVA</h2>
+                    <h2 onClick = {() => history.push("/Ecommerce-Website")} style = {{margin:"auto 0",color:"black",fontFamily:"sans-serif",fontSize: "20px",fontFamily:"-webkit-pictograph",cursor:"pointer"}}>ACTIVA</h2>
                     <Nav></Nav> 
                     
                     <Hamburger ></Hamburger>
@@ -39,7 +45,7 @@ const Main = () => {
                 <Route path = "/ShopNow" exact component = {ShopNow}></Route>
                 <Route path = "/Account" component = {UserAccount}></Route>
                 <Route path = "/SignUp" component = {SignUp}></Route>
-                <Route path = "/Cart" component = {ViewCart}></Route>
+                
                 <Route path = "/Checkout" component = {Checkout}></Route>
                 
                 <Route path = "/OrderCompleted" component = {OrderCompleted}></Route>:
@@ -52,6 +58,4 @@ const Main = () => {
             
             )
 }
-
-
-export default Main;
+export default Main

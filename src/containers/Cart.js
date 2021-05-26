@@ -107,7 +107,7 @@ const CartDetails = (props) => {
             priceMutate = props.productPrice[index];
             quantityMutate = props.productQuantity[index]; 
             productId = props.productId[index];
-           console.log("productId",productId,"element",element)
+           
             return(
            
             <div style = {{margin:"0 50px"}}>
